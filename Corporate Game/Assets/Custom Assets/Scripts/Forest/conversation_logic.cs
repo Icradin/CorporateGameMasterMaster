@@ -70,6 +70,7 @@ public class conversation_logic : MonoBehaviour {
         camp_fire.GetComponent<ParticleSystem>().Stop();
         camp_fire.GetComponentInChildren<ParticleSystem>().Stop();
         //camp_fire.GetComponent<ParticleSystem>() = false;
+        StartCoroutine("change_time");
     }
     IEnumerator change_time()
     {
@@ -100,20 +101,22 @@ public class conversation_logic : MonoBehaviour {
             RenderSettings.skybox = day_skybox;
             main_light.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
             main_light.intensity = 0.8f;
+            main_light.enabled = true;
+            night_light.enabled = false;
             //key_light_1.intensity = 0.5f;
             //key_light_1.intensity = 0.5f;
         }
 
-        if (action_count == 3)
-        {
-            RenderSettings.skybox = morning_skybox;
-            main_light.enabled = true;
-            night_light.enabled = false;
-            main_light.color = new Color(1.0f, 0.956f, 0.839f, 1.0f);
-            main_light.intensity = 0.5f;
-            //key_light_1.intensity = 0.1f;
-            //key_light_1.intensity = 0.1f;
-        }
+        //if (action_count == 3)
+        //{
+        //    RenderSettings.skybox = day_skybox;
+        //    main_light.enabled = true;
+        //    night_light.enabled = false;
+        //    main_light.color = new Color(1.0f, 0.956f, 0.839f, 1.0f);
+        //    main_light.intensity = 0.5f;
+        //    //key_light_1.intensity = 0.1f;
+        //    //key_light_1.intensity = 0.1f;
+        //}
     }
     void Update()
     {
@@ -166,7 +169,7 @@ public class conversation_logic : MonoBehaviour {
 
     public void ResetActions()
     {
-        action_count = 3;
+        action_count = 2;
         day_count++;
         water_collider.GetComponent<BoxCollider>().enabled = true;
         dirty_water_collider.GetComponent<BoxCollider>().enabled = true;

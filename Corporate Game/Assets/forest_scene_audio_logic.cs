@@ -24,10 +24,10 @@ public class forest_scene_audio_logic : MonoBehaviour {
     IEnumerator first_audio(float time)
     {
 
-        yield return new WaitForSeconds(time);
-        game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
-        audio_source.PlayOneShot(enter_talk);
-        yield return new WaitForSeconds(enter_talk.length + 1);
+        //yield return new WaitForSeconds(time);
+        //game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+        //audio_source.PlayOneShot(enter_talk);
+        //yield return new WaitForSeconds(enter_talk.length + 1);
         transition_manager.instance.fade(false);
         yield return new WaitForSeconds(0.5f);
         game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 10;
