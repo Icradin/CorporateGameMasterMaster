@@ -1,0 +1,271 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: AQUAS_Lite_Water
+  m_Shader: {fileID: 4800000, guid: 17b27c10e5c526741be3ea68863968fb, type: 3}
+  m_ShaderKeywords: _ENABLEREFLECTIONS_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 1b785ba7e757439478e6db434e0d3dd2, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ReflectionTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _FoamTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 199d83fd2aca7214481411272c61f368, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _SrcBlend
+        second: 1
+      data:
+        first:
+          name: _DstBlend
+        second: 0
+      data:
+        first:
+          name: _Cutoff
+        second: 0.5
+      data:
+        first:
+          name: _Parallax
+        second: 0.02
+      data:
+        first:
+          name: _ZWrite
+        second: 1
+      data:
+        first:
+          name: _Glossiness
+        second: 0.5
+      data:
+        first:
+          name: _BumpScale
+        second: 1
+      data:
+        first:
+          name: _OcclusionStrength
+        second: 1
+      data:
+        first:
+          name: _DetailNormalMapScale
+        second: 1
+      data:
+        first:
+          name: _UVSec
+        second: 0
+      data:
+        first:
+          name: _Mode
+        second: 0
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _NormalTiling
+        second: 2
+      data:
+        first:
+          name: _Fade
+        second: 2.2
+      data:
+        first:
+          name: _Density
+        second: 3.1
+      data:
+        first:
+          name: _DepthTransparency
+        second: 5.47
+      data:
+        first:
+          name: _ShoreFade
+        second: 0.14
+      data:
+        first:
+          name: _ShoreTransparency
+        second: 0.85
+      data:
+        first:
+          name: _EnableReflections
+        second: 1
+      data:
+        first:
+          name: _ReflectionIntensity
+        second: 0.13
+      data:
+        first:
+          name: _Distortion
+        second: 0.64
+      data:
+        first:
+          name: _Specular
+        second: 1
+      data:
+        first:
+          name: _Gloss
+        second: 10.39
+      data:
+        first:
+          name: _LightWrapping
+        second: 1
+      data:
+        first:
+          name: _Refraction
+        second: 0.527
+      data:
+        first:
+          name: _WaveSpeed
+        second: -166.6
+      data:
+        first:
+          name: _FoamTiling
+        second: 1.82
+      data:
+        first:
+          name: _FoamBlend
+        second: 0.8
+      data:
+        first:
+          name: _FoamVisibility
+        second: 0.1
+      data:
+        first:
+          name: _FoamIntensity
+        second: 11.29
+      data:
+        first:
+          name: _FoamContrast
+        second: 0.242
+      data:
+        first:
+          name: _FoamSpeed
+        second: -100.64
+      data:
+        first:
+          name: _UnderwaterMode
+        second: 0
+      data:
+        first:
+          name: _UnderwaterTranspDist
+        second: 13.56
+      data:
+        first:
+          name: _UnderwaterTranspFalloff
+        second: 0.78
+      data:
+        first:
+          name: _FullTransparency
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _EmissionColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _MainColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _DeepWaterColor
+        second: {r: 0.02389706, g: 0.19117647, b: 0.15656695, a: 1}
+      data:
+        first:
+          name: _SpecularColor
+        second: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
+      data:
+        first:
+          name: _FoamColor
+        second: {r: 0.3602941, g: 0.3655925, b: 0.3655925, a: 1}
