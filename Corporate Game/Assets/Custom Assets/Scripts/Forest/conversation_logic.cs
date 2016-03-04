@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using TouchControlsKit;
+
 
 public class conversation_logic : MonoBehaviour {
 
@@ -684,7 +686,7 @@ public class conversation_logic : MonoBehaviour {
         if (Vector3.Distance(transform.position, game_manager.Instance.Player.transform.position) < 5)
         {
             talk_to_david.GetComponent<Text>().enabled = true;
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || TCKInput.GetButtonDown("use"))
             {
 
                 audio_source.PlayOneShot(randomGreetingClip);

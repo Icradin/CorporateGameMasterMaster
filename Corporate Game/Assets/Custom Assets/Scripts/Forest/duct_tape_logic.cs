@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TouchControlsKit;
 
 public class duct_tape_logic : MonoBehaviour {
 
@@ -26,7 +27,7 @@ public class duct_tape_logic : MonoBehaviour {
 	void OnMouseOver(){
         if (Vector3.Distance(transform.position, game_manager.Instance.Player.transform.position) < 4)
         {
-            if (Input.GetKeyDown(KeyCode.E) && !game_manager.Instance.gotDuctTape)
+            if ((Input.GetKeyDown(KeyCode.E)  || TCKInput.GetButtonDown("use")) && !game_manager.Instance.gotDuctTape   )
             {
                
                 tape_image.gameObject.SetActive(true);

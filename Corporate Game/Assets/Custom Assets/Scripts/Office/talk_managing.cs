@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TouchControlsKit;
+
 
 public class talk_managing : MonoBehaviour {
 
@@ -31,7 +33,7 @@ public class talk_managing : MonoBehaviour {
                 current_talk_text.turn_on();//turn it on.
             }
    
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || TCKInput.GetButtonDown("use"))
             {
                 game_manager.Instance.talked = true;
 

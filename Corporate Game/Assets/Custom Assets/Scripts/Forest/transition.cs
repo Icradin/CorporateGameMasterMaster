@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TouchControlsKit;
 
 public class transition : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class transition : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || TCKInput.GetButtonDown("use"))
         {
             if (has_entered)
             {

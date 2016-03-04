@@ -34,7 +34,26 @@ public class scene_manager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-     
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+
+            if (Cursor.visible)
+            {
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.visible = true;
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

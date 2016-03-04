@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TouchControlsKit;
 
 public class water_logic : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class water_logic : MonoBehaviour {
 
 	void OnMouseOver(){
 		
-		if (Input.GetKeyDown (KeyCode.E))
+		if (Input.GetKeyDown (KeyCode.E) || TCKInput.GetButtonDown("use"))
 			water_bottle_image.GetComponent <Image> ().enabled = true;
 
 

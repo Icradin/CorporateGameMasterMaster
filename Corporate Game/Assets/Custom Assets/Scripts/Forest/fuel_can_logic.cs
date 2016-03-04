@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TouchControlsKit;
 
 public class fuel_can_logic : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class fuel_can_logic : MonoBehaviour
 
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || TCKInput.GetButtonDown("use"))
             {
                 disablePromptText = true;
 

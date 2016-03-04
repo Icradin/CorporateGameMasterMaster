@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
+using TouchControlsKit;
 public class player_stats : MonoBehaviour {
 
-    
+    public GameObject game_over_screen;
     public int health;
     public int hydration;
     public int hunger;
@@ -113,21 +114,58 @@ public class player_stats : MonoBehaviour {
         }
 
     }
-
-	public void CheckDeathStats()
+    bool dead = false;
+    public void CheckDeathStats()
     {
 
-
+        string deadText = " You died from : ";
         if (health <= 0)
+        {
+            deadText += "Health loss ";
+            dead = true;
             print("You died from health loss ");
+
+        }
+
         if (hydration <= 0)
+        {
+            deadText += "Dehydration ";
+            dead = true;
             print("You died from health dehydration ");
+        }
+
         if (hunger <= 0)
+        {
+            deadText += "Hunger ";
+            dead = true;
             print("You died from starving ");
+        }
         if (morale <= 0)
+        {
+            deadText += "Bad Morale";
+            dead = true;
             print("You died from loosing hope of living ");
+        }
+
+        if (dead)
+            StartCoroutine("game_over", deadText);
 
 
+    }
+
+    IEnumerator game_over(string text)
+    {
+        yield return new WaitForSeconds(1);
+        transition_manager.instance.fade(true);
+        yield return new WaitForSeconds(1);
+        transition_manager.instance.fade(false);
+        game_over_screen.SetActive(true);
+        game_over_screen.GetComponentInChildren<Text>().text = text;
+        yield return new WaitForSeconds(4);
+        transition_manager.instance.fade(true);
+        yield return new WaitForSeconds(2);
+        game_manager.Instance.scene_manager.SetState(GameState.Menu);
+        game_manager.Instance.scene_manager.SwitchToLevel(0);
     }
     
 }

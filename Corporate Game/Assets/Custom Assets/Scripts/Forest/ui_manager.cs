@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using TouchControlsKit;
 
 public class ui_manager : MonoBehaviour {
 
@@ -87,7 +87,7 @@ public class ui_manager : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)|| TCKInput.GetButtonDown("use"))
         {
 
             if (enteredSpring)
