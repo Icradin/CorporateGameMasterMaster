@@ -131,7 +131,7 @@ public class player_stats : MonoBehaviour {
         {
             deadText += "Dehydration ";
             dead = true;
-            print("You died from health dehydration ");
+            print("You died from dehydration ");
         }
 
         if (hunger <= 0)

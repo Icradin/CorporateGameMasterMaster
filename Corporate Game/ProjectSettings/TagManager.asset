@@ -16,6 +16,11 @@ TagManager:
   - key_account_manager
   - regulatory_affairs
   - brand_manager
+  - Quality Toggle
+  - david
+  - duct_tape
+  - got_tape
+  - oil_can
   layers:
   - Default
   - TransparentFX
@@ -26,7 +31,7 @@ TagManager:
   - 
   - 
   - people
-  - 
+  - interactables
   - 
   - 
   - 

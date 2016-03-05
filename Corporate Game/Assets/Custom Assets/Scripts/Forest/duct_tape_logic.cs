@@ -3,52 +3,52 @@ using System.Collections;
 using UnityEngine.UI;
 using TouchControlsKit;
 
-public class duct_tape_logic : MonoBehaviour {
+public class duct_tape_logic : conversation_base {
 
 	public GameObject duct_tape_text;
 	public GameObject tape_image;
 	public GameObject duct_tape;
 
+    //GameObject already_got_oil_text;
 
 
-
-    void OnMouseEnter()
+    public override void talk()
     {
-        if (Vector3.Distance(transform.position, game_manager.Instance.Player.transform.position) < 4)
+        if (!game_manager.Instance.gotDuctTape)
         {
-            if (!game_manager.Instance.gotDuctTape)
-            {
-                duct_tape_text.GetComponent<Text>().enabled = true;
-
-            }
+            Debug.Log("got duct tape");
+            tape_image.gameObject.SetActive(true);
+            turn_off();
+            Destroy(gameObject);
+          //  duct_tape_text.GetComponent<Text>().enabled = false;
+            game_manager.Instance.gotDuctTape = true;
+            game_manager.Instance.talked = false;
+       
         }
+        //else
+        //{
+        //    Debug.Log("already got oil");
+        //    StartCoroutine("already_got_oil");
+        //}
     }
 
-	void OnMouseOver(){
-        if (Vector3.Distance(transform.position, game_manager.Instance.Player.transform.position) < 4)
-        {
-            if ((Input.GetKeyDown(KeyCode.E)  || TCKInput.GetButtonDown("use")) && !game_manager.Instance.gotDuctTape   )
-            {
-               
-                tape_image.gameObject.SetActive(true);
-                Destroy(gameObject);
-                duct_tape_text.GetComponent<Text>().enabled = false;
-                game_manager.Instance.gotDuctTape = true;
-            }
-        }
-        else
-        {
-            duct_tape_text.GetComponent<Text>().enabled = false;
-        }
-			
-	}
+    //IEnumerator already_got_oil()
+    //{
+    //    already_got_oil_text.SetActive(true);
 
-	void OnMouseExit (){
-        if (Vector3.Distance(transform.position, game_manager.Instance.Player.transform.position) < 4)
-        {
-            duct_tape_text.GetComponent<Text>().enabled = false;
-        }
-	}
+    //    yield return new WaitForSeconds(2);
+    //    game_manager.Instance.talked = true;
+    //    Color textColor = already_got_oil_text.GetComponent<Text>().color;
+    //    while (textColor.a > 0.1f)
+    //    {
+    //        textColor.a -= 0.05f;
+    //        already_got_oil_text.GetComponent<Text>().color = textColor;
+    //    }
+    //    already_got_oil_text.SetActive(false);
+    //    textColor.a = 1;
+    //    already_got_oil_text.GetComponent<Text>().color = textColor;
+
+    //}
 
 
 }
