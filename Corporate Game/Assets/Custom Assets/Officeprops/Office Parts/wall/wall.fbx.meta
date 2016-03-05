@@ -7,11 +7,44 @@ ModelImporter:
   fileIDToRecycleName:
     100000: wall
     100002: //RootNode
+    100004: polySurface18
+    100006: polySurface19
+    100008: polySurface20
+    100010: polySurface21
+    100012: polySurface22
+    100014: polySurface29
+    100016: polySurface29 1
+    100018: polySurface3
+    100020: transform18
+    100022: transform19
+    100024: transform20
+    100026: transform21
+    100028: transform22
+    100030: transform23
     400000: wall
     400002: //RootNode
+    400004: polySurface18
+    400006: polySurface19
+    400008: polySurface20
+    400010: polySurface21
+    400012: polySurface22
+    400014: polySurface29
+    400016: polySurface29 1
+    400018: polySurface3
+    400020: transform18
+    400022: transform19
+    400024: transform20
+    400026: transform21
+    400028: transform22
+    400030: transform23
     2300000: wall
+    2300002: polySurface29
+    2300004: //RootNode
     3300000: wall
+    3300002: polySurface29
+    3300004: //RootNode
     4300000: wall
+    4300002: polySurface29
   materials:
     importMaterials: 1
     materialName: 0
