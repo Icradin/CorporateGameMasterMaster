@@ -11728,14 +11728,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui_text: {fileID: 1448423627}
-  cant_help_talk: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  cant_help_talk2: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  all_could_do: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  success_talk: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  double_visit_talk: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
+  cant_help_talk: {fileID: 8300000, guid: 92b66867e89744445b736fa4fa0b4dae, type: 3}
+  cant_help_talk2: {fileID: 8300000, guid: 16df0f3b1d7278546a77b2dc1cffc9a5, type: 3}
+  all_could_do: {fileID: 8300000, guid: 593d4ed6d78710f46b25525544311bb1, type: 3}
+  success_talk: {fileID: 8300000, guid: 83644f8a06657d047bab3ccd6ada10e7, type: 3}
+  double_visit_talk: {fileID: 8300000, guid: 9eb8640d027ceac429796baf1399cac7, type: 3}
   marketing_manager_talk: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967,
     type: 3}
-  doctor_talking: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
+  doctor_talking: {fileID: 8300000, guid: 65f791ea4c281464baa51768a0826fc3, type: 3}
   nurse_choice: {fileID: 1812518149}
   nurse: {fileID: 1040037990}
   doctor: {fileID: 660180013}
@@ -15177,9 +15177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui_text: {fileID: 649062861}
   transition_image: {fileID: 458334366}
-  marketing_1: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  marketing_2: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967, type: 3}
-  marketing_already_visited: {fileID: 8300000, guid: 6b57e67ccf48afb48bf35ba5dcf72967,
+  marketing_1: {fileID: 8300000, guid: 318e5b5a3684da24792b11b5cd79715c, type: 3}
+  marketing_2: {fileID: 8300000, guid: 9fbbd2ced6b68ab4985aee253ad8692a, type: 3}
+  marketing_already_visited: {fileID: 8300000, guid: b94df4be11bd4aa4da0f94c24b4049f6,
     type: 3}
 --- !u!23 &1495680641
 MeshRenderer:
