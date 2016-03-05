@@ -3,11 +3,11 @@ using System.Collections;
 
 
 //base class to control UI text prompts for conversations.
-
+[RequireComponent(typeof(AudioSource))]
 public class talk_base : MonoBehaviour {
 
     public GameObject ui_text;
-    public AudioSource audio_source;
+    protected AudioSource audio_source;
     //public AudioClip[] audio_clips;
 
     protected int conversation_progression
@@ -37,13 +37,14 @@ public class talk_base : MonoBehaviour {
     }
 
     protected SpriteRenderer speech_bubble;
-
+    
     // Use this for initialization
     public virtual void Start () {
         turn_off();
-
+        audio_source = GetComponent<AudioSource>();
         speech_bubble = GetComponentInChildren<SpriteRenderer>();
         speech_bubble.enabled = false;
+        
     }
 	
 	

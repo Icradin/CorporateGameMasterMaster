@@ -63,15 +63,11 @@ public class conversation_logic : MonoBehaviour {
     void Start()
     {
         ui_manager = FindObjectOfType<ui_manager>();
-        //inventory_water = inventory_water.GetComponent<Image>();
-        //inventory_fruit = inventory_fruit.GetComponent<Image>();
-        //inventory_fish = inventory_fish.GetComponent<Image>();
-        //inventory_oil = inventory_oil.GetComponent<Image>();
+        
 
-        // ParticleSystem camp_particles = camp_fire.GetComponent<ParticleSystem>();
         camp_fire.GetComponent<ParticleSystem>().Stop();
         camp_fire.GetComponentInChildren<ParticleSystem>().Stop();
-        //camp_fire.GetComponent<ParticleSystem>() = false;
+
         StartCoroutine("change_time");
     }
     IEnumerator change_time()
@@ -108,17 +104,6 @@ public class conversation_logic : MonoBehaviour {
             //key_light_1.intensity = 0.5f;
             //key_light_1.intensity = 0.5f;
         }
-
-        //if (action_count == 3)
-        //{
-        //    RenderSettings.skybox = day_skybox;
-        //    main_light.enabled = true;
-        //    night_light.enabled = false;
-        //    main_light.color = new Color(1.0f, 0.956f, 0.839f, 1.0f);
-        //    main_light.intensity = 0.5f;
-        //    //key_light_1.intensity = 0.1f;
-        //    //key_light_1.intensity = 0.1f;
-        //}
     }
     void Update()
     {
@@ -659,7 +644,6 @@ public class conversation_logic : MonoBehaviour {
 
     AudioClip randomGreetingClip
     {
-
         get
         {
             AudioClip clipToReturn = null;
@@ -744,14 +728,7 @@ public class conversation_logic : MonoBehaviour {
         talk_to_david.GetComponent<Text>().enabled = false;
     }
 
-    //quits the application
-    public void ApplicationQuit()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-
-        }
-    }
+ 
 	
 
 }
