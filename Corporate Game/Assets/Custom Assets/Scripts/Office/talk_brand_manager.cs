@@ -49,6 +49,7 @@ public class talk_brand_manager : talk_base {
     {
         if (brand_visit == 0)
         {
+
             audio_source.PlayOneShot(brand_reject);
             StartCoroutine("wait_to_finish_talking", brand_reject.length);
             brand_visit++;

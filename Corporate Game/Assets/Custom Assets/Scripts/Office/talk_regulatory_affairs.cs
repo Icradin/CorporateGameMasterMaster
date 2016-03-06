@@ -24,6 +24,7 @@ public class talk_regulatory_affairs : talk_base {
     {
         if(boss_talk_progression == 3)
         {
+            game_manager.Instance.score_fore_sight--;
             Debug.Log("advancing time 1 week --- start");
             audio_source.PlayOneShot(audio_meeting);
             StartCoroutine("advance_time", audio_meeting.length);

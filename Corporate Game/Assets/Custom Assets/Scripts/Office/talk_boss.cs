@@ -16,7 +16,7 @@ public class talk_boss : talk_base
 
     public AudioClip talk_account_manager;
     public AudioClip boss_talk_double_visit;
-    public AudioClip boss_impressed;
+    public AudioClip boss_marketing_talk;
     public AudioClip boss_disappointed;
     public AudioClip boss_win;
     public AudioClip boss_talk_other;
@@ -55,7 +55,7 @@ public class talk_boss : talk_base
             game_manager.Instance.score_fore_sight--;
             // play boss marketing audio .. informs that plaer can talk to account manager bout the problem
             Debug.Log("maybe talk to account manager ... begin");
-            audio_source.PlayOneShot(talk_account_manager);
+            audio_source.PlayOneShot(boss_marketing_talk);
             StartCoroutine("talk_to_account_manager", talk_account_manager.length);
             return;
         }
@@ -66,8 +66,8 @@ public class talk_boss : talk_base
             //play audio to inform that player can do a double vist 
 
             Debug.Log("boss progress - tells you can do double visit ---- start talk");
-            audio_source.PlayOneShot(boss_talk_double_visit);
-            StartCoroutine("double_visist_talking", boss_talk_double_visit.length);
+            audio_source.PlayOneShot(talk_account_manager);
+            StartCoroutine("double_visist_talking", talk_account_manager.length);
             return;
         }
 
@@ -76,8 +76,8 @@ public class talk_boss : talk_base
             game_manager.Instance.score_fore_sight--;
             Debug.Log("boss impressed --- start");
 
-            audio_source.PlayOneShot(boss_impressed);
-            StartCoroutine("boss_impressed_talking", boss_impressed.length);
+            audio_source.PlayOneShot(boss_talk_double_visit);
+            StartCoroutine("boss_impressed_talking", boss_talk_double_visit.length);
 
 
             return;

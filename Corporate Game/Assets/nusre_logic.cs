@@ -40,6 +40,8 @@ public class nusre_logic : MonoBehaviour {
         game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 10;
         yield return new WaitForSeconds(1);
         game_manager.Instance.boss_talk_progression++;
+        game_manager.Instance.score_proactivity++;
+        game_manager.Instance.score_system_analysis++;
         game_manager.Instance.talked = false;
         speech_bubble.enabled = false;
         Debug.Log("successfull meeting");
