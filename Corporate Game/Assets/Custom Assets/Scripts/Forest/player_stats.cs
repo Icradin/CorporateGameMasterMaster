@@ -39,7 +39,7 @@ public class player_stats : MonoBehaviour {
                 hydration = 5;
                 hunger = 5;
                 morale = 5;
-                image_offset = 51;
+                image_offset = 42;
                 print("easy");
                 break;
             case 2: //medium
@@ -47,7 +47,7 @@ public class player_stats : MonoBehaviour {
                 hydration = 4;
                 hunger = 4;
                 morale = 4;
-                image_offset = 65;
+                image_offset = 53;
                 print("medium");
                 break;
             case 3: //hard
@@ -55,7 +55,7 @@ public class player_stats : MonoBehaviour {
                 hydration = 3;
                 hunger = 3;
                 morale = 3;
-                image_offset = 85;
+                image_offset = 70;
                 print("hard");
                 break;
         }

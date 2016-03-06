@@ -144,6 +144,10 @@ public class scene_manager : MonoBehaviour {
     {
         SetState(GameState.InGame);
     }
+    public void PauseGame()
+    {
+        SetState(GameState.Paused);
+    }
 
     public void SwitchToLevel(int index)
     {

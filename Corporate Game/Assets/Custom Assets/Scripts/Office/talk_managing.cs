@@ -23,9 +23,9 @@ public class talk_managing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-       // Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 5f, Color.red);
-        if(Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hit,5f, people_mask) && !game_manager.Instance.talked)
+      
+         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * 5f, Color.red);
+        if (Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hit,5f, people_mask) && !game_manager.Instance.talked)
         {
             if(current_talk_text == null) //store refference only once.
             {

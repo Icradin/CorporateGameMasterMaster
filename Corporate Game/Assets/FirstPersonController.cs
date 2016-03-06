@@ -85,8 +85,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 if (input_type == InputType.KeyboardMouse)
                     m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-                else
-                    m_Jump = TCKInput.GetButtonDown("jump");
+            //    else
+                   // m_Jump = TCKInput.GetButtonDown("jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)

@@ -71,7 +71,9 @@ public class talk_brand_manager : talk_base {
 
     IEnumerator wait_to_finish_talking(float time )
     {
+        speech_bubble.enabled = true;
         yield return new WaitForSeconds(time);
+        speech_bubble.enabled = false;
         game_manager.Instance.talked = false;
 
     }

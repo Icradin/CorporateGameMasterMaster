@@ -54,7 +54,7 @@ public class talk_marketing : talk_base
         transition_image.SetActive(false); //disable 2 weeks later image
 
         transition_manager.instance.fade(false); //fade in
-
+        game_manager.Instance.Player.transform.LookAt(transform);
         yield return new WaitForSeconds(2);
 
         Debug.Log("playing audio 2 after advanced time -> waiting audio "); //playing other audio 

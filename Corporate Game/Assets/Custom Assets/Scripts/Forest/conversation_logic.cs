@@ -14,7 +14,7 @@ public class conversation_logic : conversation_base {
         water_collider, dirty_water_collider, fruit_collider, fish_collider, oil_collider, camp_fire;
     
 	public GameObject talk_button, map_button, daily_tasks_button, goodbye_button, 
-        back_button, what_happened_button, survive_button,
+        back_button, what_happened_button,
         give_water, give_fruit, give_fish, give_oil, give_dirty_water;
 
     public bool got_dirty_water = false, got_water = false, got_fruit = false, got_fish = false, got_oil = false;
@@ -289,7 +289,7 @@ public class conversation_logic : conversation_base {
         map_button.gameObject.SetActive(false);
         daily_tasks_button.gameObject.SetActive(false);
         what_happened_button.gameObject.SetActive(true);
-        survive_button.gameObject.SetActive(true);
+   //     survive_button.gameObject.SetActive(true);
         back_button.gameObject.SetActive(true);
         conversation_level = 2;
 
@@ -380,7 +380,7 @@ public class conversation_logic : conversation_base {
             if(inTalking)
             {
                 stop_audio();
-                survive_button.gameObject.SetActive(false);
+              //  survive_button.gameObject.SetActive(false);
                 what_happened_button.gameObject.SetActive(false);
                 inTalking = false;
 
@@ -425,7 +425,7 @@ public class conversation_logic : conversation_base {
         give_fish.gameObject.SetActive(false);
         give_oil.gameObject.SetActive(false);
         what_happened_button.gameObject.SetActive(false);
-        survive_button.gameObject.SetActive(false);
+     //   survive_button.gameObject.SetActive(false);
     }
 
     //public setter functions

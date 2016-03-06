@@ -135,6 +135,7 @@ public class fuel_can_logic : conversation_base
     void OfficeLevel()
     {
         game_manager.Instance.scene_manager.SwitchToLevel(2);
+        game_manager.Instance.talked = false;
     }
 
     public void TakeOil()

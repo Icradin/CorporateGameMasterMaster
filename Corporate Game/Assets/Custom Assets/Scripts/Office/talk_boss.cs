@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 public class talk_boss : talk_base
 {
     public GameObject win_screen;
     public GameObject game_over_screen;
+    public GameObject boss_buys_text;
     bool bossImrpessed = false;
 
     public AudioClip talk_account_manager;
@@ -13,12 +15,30 @@ public class talk_boss : talk_base
     public AudioClip boss_disappointed;
     public AudioClip boss_win;
     public AudioClip boss_talk_other;
+    public AudioClip boss_start_talk;
 
     // Use this for initialization
     override public void Start()
     {
         base.Start();
         win_screen.SetActive(false);
+
+
+        StartCoroutine("initial_conversation");
+    }
+
+    IEnumerator initial_conversation ()
+    {
+        game_manager.Instance.talked = true;
+        game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 0;
+        yield return new WaitForSeconds(4);
+        audio_source.PlayOneShot(boss_start_talk);
+        speech_bubble.enabled = true;
+        yield return new WaitForSeconds(boss_start_talk.length);
+        speech_bubble.enabled = false;
+        yield return new WaitForSeconds(1);
+        game_manager.Instance.talked = false;
+        game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 10;
     }
     public override void talk()
     {
@@ -80,7 +100,25 @@ public class talk_boss : talk_base
             return;
         }
 
-        Debug.Log("Bosscurrently buzy !!");
+        StartCoroutine("boss_busy");
+
+    }
+
+    IEnumerator boss_busy()
+    {
+        boss_buys_text.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+        game_manager.Instance.talked = false;
+        Color textColor = boss_buys_text.GetComponent<Text>().color;
+        while (textColor.a > 0.1f)
+        {
+            textColor.a -= 0.05f;
+            boss_buys_text.GetComponent<Text>().color = textColor;
+        }
+        boss_buys_text.SetActive(false);
+        textColor.a = 1;
+        boss_buys_text.GetComponent<Text>().color = textColor;
         game_manager.Instance.talked = false;
 
     }
