@@ -92,7 +92,7 @@ public class fuel_can_logic : conversation_base
     }
     public void SealLeakage()
     {
-      
+        game_manager.Instance.score_system_analysis++;
         barrel_choice.SetActive(false);
        
       //  game_win_image.SetActive(true);

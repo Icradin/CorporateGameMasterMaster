@@ -65,6 +65,8 @@ public class talk_marketing : talk_base
         game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 10;
         speech_bubble.enabled = false;
         boss_talk_progression++;
+        game_manager.Instance.score_system_analysis++;
+        game_manager.Instance.score_proactivity++;
 
 
         game_manager.Instance.talked = false;
@@ -85,14 +87,15 @@ public class talk_marketing : talk_base
           
             audio_source.PlayOneShot(marketing_1);
             StartCoroutine("advance_time", marketing_1.length);
-
+            game_manager.Instance.score_fore_sight--;
             // --- make newvariable that is marketing visits -- unclear
 
             return;
         }
         else
         {
-         
+            game_manager.Instance.score_proactivity--;
+            game_manager.Instance.score_fore_sight--;
             audio_source.PlayOneShot(marketing_already_visited);
             StartCoroutine("already_visited", marketing_already_visited.length);
         }

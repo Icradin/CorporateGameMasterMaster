@@ -158,7 +158,7 @@ public class conversation_logic : conversation_base {
     //Button Functions
     public void GiveWater()
     {
-
+        game_manager.Instance.score_decision_making++;
         stop_audio();
         audio_source.PlayOneShot(gave_water);
 
@@ -179,7 +179,7 @@ public class conversation_logic : conversation_base {
 
     public void GiveDirtyWater()
     {
-
+        game_manager.Instance.score_decision_making--;
         stop_audio();
         audio_source.PlayOneShot(gave_dirty_water);
 
@@ -203,6 +203,7 @@ public class conversation_logic : conversation_base {
 
     public void GiveFruit()
     {
+        game_manager.Instance.score_decision_making++;
 
         stop_audio();
         audio_source.PlayOneShot(gave_fruit);
@@ -220,7 +221,7 @@ public class conversation_logic : conversation_base {
 
     public void GiveFish()
     {
-
+        game_manager.Instance.score_decision_making--;
         stop_audio();
         audio_source.PlayOneShot(gave_fish);
 
@@ -239,7 +240,7 @@ public class conversation_logic : conversation_base {
 
     public void GiveOil()
     {
-
+        game_manager.Instance.score_decision_making++;
         stop_audio();
         audio_source.PlayOneShot(gave_oil);
 

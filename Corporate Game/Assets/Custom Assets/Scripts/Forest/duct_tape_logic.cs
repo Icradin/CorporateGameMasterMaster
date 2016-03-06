@@ -17,6 +17,7 @@ public class duct_tape_logic : conversation_base {
         if (!game_manager.Instance.gotDuctTape)
         {
             Debug.Log("got duct tape");
+            game_manager.Instance.score_system_analysis++;
             tape_image.gameObject.SetActive(true);
             turn_off();
             Destroy(gameObject);

@@ -20,6 +20,7 @@ public class transition : MonoBehaviour {
                 transition_manager.instance.transition(transition_number, gameObject);
                 //print("");
                 has_entered = false;
+                game_manager.Instance.score_fore_sight--;
 
             }
            

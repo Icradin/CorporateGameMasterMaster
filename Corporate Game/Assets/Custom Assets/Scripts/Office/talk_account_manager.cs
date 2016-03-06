@@ -35,6 +35,7 @@ public class talk_account_manager : talk_base {
 
         if (boss_double_visit && !doubleVisitDone)
         {
+            game_manager.Instance.score_fore_sight--;
             doubleVisitDone = true;
             Debug.Log("Load double visit scene !");
             audio_source.PlayOneShot(double_visit_talk);
@@ -48,12 +49,15 @@ public class talk_account_manager : talk_base {
             if(key_account_visits == 0)
             {
                 //PLAY first denial ayduo
-              
+                game_manager.Instance.score_fore_sight--;
+                game_manager.Instance.score_proactivity--;
                 audio_source.PlayOneShot(cant_help_talk);
                 StartCoroutine("cant_help", cant_help_talk.length);
             }
             else if ( key_account_visits ==1)
             {
+                game_manager.Instance.score_fore_sight--;
+                game_manager.Instance.score_proactivity--;
                 audio_source.PlayOneShot(cant_help_talk2);
                 StartCoroutine("cant_help_insist", cant_help_talk2.length);
            
@@ -70,6 +74,8 @@ public class talk_account_manager : talk_base {
 
        if(conversation_progression > 1)
         {
+            game_manager.Instance.score_fore_sight--;
+            game_manager.Instance.score_proactivity--;
             audio_source.PlayOneShot(all_could_do);
             StartCoroutine("all_could_do_talking", all_could_do.length);
             return;
@@ -105,6 +111,8 @@ public class talk_account_manager : talk_base {
         speech_bubble.enabled = true;
         yield return new WaitForSeconds(time);
         boss_talk_progression++;
+        game_manager.Instance.score_proactivity++;
+        game_manager.Instance.score_system_analysis++;
         speech_bubble.enabled = false;
         Debug.Log("boss progression increased  -- end ");
         game_manager.Instance.talked = false;

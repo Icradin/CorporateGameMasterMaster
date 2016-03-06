@@ -58,6 +58,20 @@ public class game_manager : MonoBehaviour {
 
     private List<AudioSource> _audio_sources;
 
+
+    public int score_system_analysis = 0;
+    public int score_decision_making = 0;
+    public int score_proactivity = 0;
+    private int _score_fore_sight = 20;
+
+    public int score_fore_sight
+    {
+        get { return _score_fore_sight; }
+        set { _score_fore_sight = value;
+            if (_score_fore_sight > 20)
+                _score_fore_sight = 20;
+        }
+    }
     public GameObject movement_control;
     public GameObject pause_button;
     public GameObject use_button;

@@ -37,17 +37,23 @@ public class talk_regulatory_affairs : talk_base {
             {
                 audio_source.PlayOneShot(not_our_fault);
                 StartCoroutine("not_ourt_fault_talking", not_our_fault.length);
+                game_manager.Instance.score_proactivity--;
+                game_manager.Instance.score_fore_sight--;
                 return;
             }
             if (regulatory_affairs_visits == 1)
             {
                 audio_source.PlayOneShot(not_our_fault2);
                 StartCoroutine("not_ourt_fault_talking2", not_our_fault2.length);
+                game_manager.Instance.score_proactivity--;
+                game_manager.Instance.score_fore_sight--;
                 return;
             }
         }
        if(boss_talk_progression > 3)
         {
+            game_manager.Instance.score_proactivity--;
+            game_manager.Instance.score_fore_sight--;
             audio_source.PlayOneShot(cant_help_anymore);
             StartCoroutine("cant_help_anymore_talking", cant_help_anymore.length);
             return;
@@ -113,6 +119,8 @@ public class talk_regulatory_affairs : talk_base {
         speech_bubble.enabled = false;
         game_manager.Instance.Player.GetComponent<FirstPersonController>().m_WalkSpeed = 10;
         boss_talk_progression++;
+        game_manager.Instance.score_proactivity++;
+        game_manager.Instance.score_system_analysis++;
         game_manager.Instance.talked = false;
 
     }

@@ -52,15 +52,21 @@ public class talk_brand_manager : talk_base {
             audio_source.PlayOneShot(brand_reject);
             StartCoroutine("wait_to_finish_talking", brand_reject.length);
             brand_visit++;
+            game_manager.Instance.score_proactivity--;
+            game_manager.Instance.score_fore_sight--;
         }
         else if(brand_visit == 1)
         {
+            game_manager.Instance.score_proactivity--;
+            game_manager.Instance.score_fore_sight--;
             audio_source.PlayOneShot(brand_reject2);
             StartCoroutine("wait_to_finish_talking", brand_reject2.length);
             brand_visit++;
         }
         else if (brand_visit > 1)
         {
+            game_manager.Instance.score_proactivity--;
+            game_manager.Instance.score_fore_sight--;
             AudioClip randomClip = randomRejectClip;
             audio_source.PlayOneShot(randomClip);
             StartCoroutine("wait_to_finish_talking", randomClip.length);

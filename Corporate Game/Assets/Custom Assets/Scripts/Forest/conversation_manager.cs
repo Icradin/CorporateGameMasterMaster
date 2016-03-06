@@ -208,6 +208,7 @@ public class conversation_manager : MonoBehaviour {
                 {
                     Invoke("DecreaseMorale", 2.0f);
                     print("Morale has been decreased ( fire not ON when sleeping)");
+                    game_manager.Instance.score_decision_making--;
                 }
                 else
                 {
