@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class game_manager : MonoBehaviour {
 
@@ -55,6 +56,25 @@ public class game_manager : MonoBehaviour {
 
     public bool talked = false;
 
+    private List<AudioSource> _audio_sources;
+
+    public GameObject movement_control;
+    public GameObject pause_button;
+    public GameObject use_button;
+
+    public List<AudioSource> all_audio_sources
+    {
+        get
+        {
+            if(_audio_sources == null)
+            {
+                AudioSource[] allAudios = FindObjectsOfType<AudioSource>();
+                _audio_sources = new List<AudioSource>(allAudios);
+            }
+            return _audio_sources;
+        }
+    }
+
     void Awake()
     {
         difficulty_level = 1;
@@ -65,7 +85,18 @@ public class game_manager : MonoBehaviour {
         }  
 
     }
-
+    public void disable_touch()
+    {
+        movement_control.SetActive(false);
+        pause_button.SetActive(false);
+        use_button.SetActive(false);
+    }
+    public void enable_touch()
+    {
+        movement_control.SetActive(true);
+        pause_button.SetActive(true);
+        use_button.SetActive(true);
+    }
 
     void OnLevelWasLoaded()
     {
@@ -73,13 +104,19 @@ public class game_manager : MonoBehaviour {
         {
             FindRefferenceToGameObject();
         }
-
+        _audio_sources.Clear();
+        _audio_sources = null;
     }
 
     void FindRefferenceToGameObject()
     {
         pause_menu = FindObjectOfType<pause_menu_manager>();
         scene_manager = FindObjectOfType<scene_manager>();
+
+
+        movement_control = GameObject.Find("joystick");
+        pause_button = GameObject.Find("pause_button");
+        use_button = GameObject.Find("use_button");
     }
 
 

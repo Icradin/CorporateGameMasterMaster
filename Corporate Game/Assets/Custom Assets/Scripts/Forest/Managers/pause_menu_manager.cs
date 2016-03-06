@@ -7,7 +7,7 @@ public class pause_menu_manager : MonoBehaviour {
 
     [SerializeField]
     GameObject pause_menu;
-    public AudioSource audio_source;
+ //   public AudioSource audio_source;
 
 
     void Start()
@@ -19,13 +19,18 @@ public class pause_menu_manager : MonoBehaviour {
 	public void DeactivatePauseMenu()
     {
         pause_menu.SetActive(false);
-        audio_source.UnPause();
-
+        foreach (AudioSource audio_source in game_manager.Instance.all_audio_sources)
+        {
+            audio_source.UnPause();
+        }
     }
     public void ActivatePauseMenu()
     {
         pause_menu.SetActive(true);
-        audio_source.Pause();
+        foreach (AudioSource audio_source in game_manager.Instance.all_audio_sources)
+        {
+            audio_source.Pause();
+        }
     }
 
 

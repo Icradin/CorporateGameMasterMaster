@@ -157,6 +157,7 @@ public class player_stats : MonoBehaviour {
     {
         yield return new WaitForSeconds(1);
         transition_manager.instance.fade(true);
+        game_manager.Instance.disable_touch();
         yield return new WaitForSeconds(1);
         transition_manager.instance.fade(false);
         game_over_screen.SetActive(true);

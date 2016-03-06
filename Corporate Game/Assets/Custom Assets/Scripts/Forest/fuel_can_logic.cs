@@ -106,6 +106,7 @@ public class fuel_can_logic : conversation_base
     {
         yield return new WaitForSeconds(1);
         transition_manager.instance.fade(true);
+        game_manager.Instance.disable_touch();
         yield return new WaitForSeconds(2);
         transition_manager.instance.fade(false);
         game_win_image.SetActive(true);

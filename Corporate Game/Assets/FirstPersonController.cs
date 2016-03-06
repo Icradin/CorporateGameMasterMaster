@@ -20,6 +20,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
         public InputType input_type;
+
+       
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] public float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -55,6 +58,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+            if (input_type == InputType.KeyboardMouse)
+                game_manager.Instance.disable_touch();
+            else
+                game_manager.Instance.enable_touch();
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
