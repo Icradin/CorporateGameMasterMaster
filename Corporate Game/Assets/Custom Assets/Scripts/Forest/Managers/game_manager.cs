@@ -129,7 +129,10 @@ public class game_manager : MonoBehaviour {
         {
             FindRefferenceToGameObject();
         }
-        _audio_sources.Clear();
+
+        if(_audio_sources != null)
+            _audio_sources.Clear();
+
         _audio_sources = null;
     }
 

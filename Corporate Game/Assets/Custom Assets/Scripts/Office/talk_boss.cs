@@ -107,7 +107,6 @@ public class talk_boss : talk_base
             Debug.Log("boss tells u to talk to somebody else --- begin");
             audio_source.PlayOneShot(boss_talk_other);
             StartCoroutine("talk_to_somebody_else", boss_talk_other.length);
-
             return;
         }
 
@@ -143,8 +142,8 @@ public class talk_boss : talk_base
         yield return new WaitForSeconds(1);
         game_manager.Instance.disable_touch();
         win_screen.SetActive(true);
+        game_manager.Instance.scene_manager.SetState(GameState.InteractBarrel);
         transition_manager.instance.fade(false);
-
     }
 
     
