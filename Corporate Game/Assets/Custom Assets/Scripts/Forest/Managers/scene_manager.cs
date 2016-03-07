@@ -151,6 +151,12 @@ public class scene_manager : MonoBehaviour {
 
     public void SwitchToLevel(int index)
     {
+        if (index == 2)
+        {
+            game_manager.Instance.reset_office();
+            game_manager.Instance.reset_score();
+        }
+        
         game_manager.Instance.Current_State = GameState.InGame;
         SetState(GameState.InGame);
         //Application.LoadLevel(index);
@@ -161,6 +167,12 @@ public class scene_manager : MonoBehaviour {
     public void SwitchToMainMenu()
     {
         game_manager.Instance.Current_State = GameState.Menu;
+        game_manager.Instance.reset_forest();
+        game_manager.Instance.reset_office();
+        game_manager.Instance.reset_score();
+
+
+        SetState(GameState.Menu);
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
     public void CloseGame()

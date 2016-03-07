@@ -121,7 +121,7 @@ public class player_stats : MonoBehaviour {
         string deadText = " You died from : ";
         if (health <= 0)
         {
-            deadText += "Health loss ";
+            deadText += "Health loss - ";
             dead = true;
             print("You died from health loss ");
 
@@ -129,20 +129,20 @@ public class player_stats : MonoBehaviour {
 
         if (hydration <= 0)
         {
-            deadText += "Dehydration ";
+            deadText += "Dehydration - ";
             dead = true;
             print("You died from dehydration ");
         }
 
         if (hunger <= 0)
         {
-            deadText += "Hunger ";
+            deadText += "Hunger - ";
             dead = true;
             print("You died from starving ");
         }
         if (morale <= 0)
         {
-            deadText += "Bad Morale";
+            deadText += "Bad Morale - ";
             dead = true;
             print("You died from loosing hope of living ");
         }
@@ -165,8 +165,7 @@ public class player_stats : MonoBehaviour {
         yield return new WaitForSeconds(4);
         transition_manager.instance.fade(true);
         yield return new WaitForSeconds(2);
-        game_manager.Instance.scene_manager.SetState(GameState.Menu);
-        game_manager.Instance.scene_manager.SwitchToLevel(0);
+        game_manager.Instance.scene_manager.SwitchToMainMenu();
     }
     
 }

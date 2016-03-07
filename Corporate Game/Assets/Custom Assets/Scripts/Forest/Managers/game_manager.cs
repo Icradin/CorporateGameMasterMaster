@@ -62,7 +62,7 @@ public class game_manager : MonoBehaviour {
     public int score_system_analysis = 0;
     public int score_decision_making = 0;
     public int score_proactivity_ = 0;
-    private int _score_fore_sight = 20;
+    private int _score_fore_sight = 40;
 
     public int score_proactivity
     {
@@ -79,8 +79,8 @@ public class game_manager : MonoBehaviour {
     {
         get { return _score_fore_sight; }
         set { _score_fore_sight = value;
-            if (_score_fore_sight > 20)
-                _score_fore_sight = 20;
+            if (_score_fore_sight > 40)
+                _score_fore_sight = 40;
         }
     }
     public GameObject movement_control;
@@ -121,6 +121,30 @@ public class game_manager : MonoBehaviour {
         movement_control.SetActive(true);
         pause_button.SetActive(true);
         use_button.SetActive(true);
+    }
+    public void reset_forest()
+    {
+        gotDuctTape = false;
+        talked = false;
+
+
+    }
+
+    public void reset_office()
+    {
+        conversation_progression = 0;
+        boss_talk_progression = 0;
+        nothing_to_talk = false;
+        boss_lose = false;
+        boss_double_visit = false;
+        talked = false;
+    }
+    public void reset_score()
+    {
+          score_system_analysis = 0;
+          score_decision_making = 0;
+          score_proactivity_ = 0;
+          _score_fore_sight = 40;
     }
 
     void OnLevelWasLoaded()
