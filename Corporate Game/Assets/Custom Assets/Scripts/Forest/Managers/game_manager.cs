@@ -61,8 +61,19 @@ public class game_manager : MonoBehaviour {
 
     public int score_system_analysis = 0;
     public int score_decision_making = 0;
-    public int score_proactivity = 0;
+    public int score_proactivity_ = 0;
     private int _score_fore_sight = 20;
+
+    public int score_proactivity
+    {
+        get { return score_proactivity_; }
+        set
+        {
+            score_proactivity_ = value;
+            if (score_proactivity_ < 0)
+                score_proactivity_ = 0;
+        }
+    }
 
     public int score_fore_sight
     {
